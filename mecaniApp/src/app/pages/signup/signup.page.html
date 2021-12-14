@@ -1,0 +1,93 @@
+<ion-content>
+  <div class="heading">
+    <h1>MecaniApp</h1>
+    <p>Registro</p>
+    <hr />
+  </div>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="email-login">
+      <p>Por favor regístrate para ingresar a la aplicación</p>
+      <div class="formfield">
+        <input type="text" class="form-control" id="floatingInputName" formControlName="name"
+          pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" placeholder="John" />
+        <label for="floatingInputName">Nombre</label>
+        <p align="start" style="padding-left: 30px; color:red;"
+          *ngIf="!signupForm.hasError('required','name') &&signupForm.controls['name'].invalid && signupForm.hasError('pattern','name')">
+          Ingrese un nombre válido
+        </p>
+        <p align="start" style="padding-left: 30px; color:goldenrod;"
+          *ngIf="!signupForm.controls['name'].noWhitespaceValidator">
+          No se permiten espacios vacíos
+        </p>
+        <p align="start" style="padding-left: 30px; color:red; " *ngIf="signupForm.hasError('required','name')">
+          Nombre <strong>Obligatorio</strong>
+        </p>
+      </div>
+      <div class="formfield">
+        <input type="text" class="form-control" id="floatingInputLastName" formControlName="last_name"
+          placeholder="Doe" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" />
+        <label for="floatingInputLastName">Apellido</label>
+        <p align="start" style="padding-left: 30px; color:red;"
+          *ngIf="!signupForm.hasError('required','last_name') &&signupForm.controls['last_name'].invalid && signupForm.hasError('pattern','last_name')">
+          Ingrese apellido válido
+        </p>
+        <p align="start" style="padding-left: 30px; color:goldenrod;"
+          *ngIf="!signupForm.controls['name'].noWhitespaceValidator">
+          No se permiten espacios vacíos
+        </p>
+        <p align="start" style="padding-left: 30px; color:red;" *ngIf="signupForm.hasError('required','last_name')">
+          Apellido <strong>Obligatorio</strong>
+        </p>
+      </div>
+      <div class="formfield">
+        <input type="email" class="form-control" id="floatingInputEmail" formControlName="email"
+          placeholder="email@example.com" />
+        <label for="floatingInputEmail">Correo</label>
+        <p align="start" style="padding-left: 30px; color:red;"
+          *ngIf="signupForm.controls['email'].touched &&signupForm.controls['email'].invalid && !signupForm.hasError('required','email')">
+          Ingrese un correo válido
+        </p>
+        <p align="start" style="padding-left: 30px; color:red;" *ngIf="signupForm.hasError('required','email')">
+          Correo es <strong>Obligatorio</strong>
+        </p>
+      </div>
+      <div class="formfield">
+        <input style="width: 80vw" type="password" [type]="passwordType" clearOnEdit="false" class="form-control" id="floatingPassword"
+          formControlName="password" placeholder="Contraseña" />
+        <label for="floatingPassword">Contraseña</label>
+        <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+        <p align="start" style="padding-left: 30px; color:goldenrod;"
+          *ngIf="signupForm.hasError('required', 'password')">
+          Ingrese su contraseña
+        </p>
+      </div>
+      <div class="formfield">
+        <input style="width: 80vw" type="password" [type]="passwordType" clearOnEdit="false" class="form-control"
+          id="floatingPasswordConfirmation" formControlName="password_confirmation"
+          placeholder="Confirmar contraseña" />
+        <label for="floatingPasswordConfirmation">Confirmar contraseña</label>
+        <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+        <p align="start" style="color:red; padding-left: 30px;" 
+          *ngIf="signupForm.controls['password_confirmation'].invalid && !signupForm.hasError('required', 'password')">
+          Contraseñas no coinciden
+        </p>
+        <p align="start" style="padding-left: 30px; color:goldenrod;"
+          *ngIf="signupForm.hasError('required', 'password')">
+          Repita su contraseña
+        </p>
+      </div>
+    </div>
+    <div class="login-button">
+      <ion-button type="submit" [disabled]="signupForm.invalid" class="login">Registrarse</ion-button>
+      <p>¿Ya tienes una cuenta? <span routerLink="/login"> Iniciar sesión</span></p>
+    </div>
+    <!--  <p>Form Status: {{ signupForm.status }}</p>
+    <p>Email {{ signupForm.controls['email'].status}}</p>
+    <p>Nombre {{ signupForm.controls['name'].status}}</p>
+    <p>A {{ signupForm.controls['last_name'].status}}</p>
+    <p>P {{ signupForm.controls['password'].status}}</p>
+    <p>Pc {{ signupForm.controls['password_confirmation'].status}}</p> -->
+  </form>
+
+
+</ion-content>

@@ -1,0 +1,100 @@
+ion-title{
+    font-size: 25px;
+
+}
+
+ion-toolbar{
+    display: flex;
+    flex-direction: column;
+}
+
+.email-login{
+    margin-top: 20px;
+    text-align: center;
+    p{
+        color: rgb(87, 88, 79);
+    }
+}
+
+.backIcon{
+    margin-top: 5px;
+    float: right;
+    color: rgba(244,196,51,1);
+    font-size: 30px;
+}
+
+.passwordIcon{
+    margin-top: 5px;
+    float: inline-start;
+}
+
+.img{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.imgProfile{
+    justify-content: center;
+    max-height: 150px;
+    max-width: 150px;
+}
+.email-login{
+    margin-top: 20px;
+    text-align: center;
+    p{
+        color: rgb(87, 88, 79);
+    }
+}
+
+.formfield{
+    position: relative;
+    margin: auto;
+    padding: 0px;
+    border: 0px;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.formfield > input,
+.formfield > label {
+    padding: 1em;
+    margin: 0.5em;
+    width: 85%;
+}
+
+.formfield > input{
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+.formfield > label {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    text-align: start;
+    padding-left: 40px;
+}
+
+input:focus + label,
+input:valid + label {
+    font-size: 1rem;
+    width: auto;
+    height: 1.3em;
+    padding: 0px 0.5em 0px 0.5em;
+    margin: 0px;
+    transition: 0.2s ease-in-out;
+    top: 0em;
+    left: 2em;
+}
+
+.update{
+    text-align: center;
+    margin-top: 10px;
+    ion-button{
+        text-transform: none;
+        font-size: 1rem;
+        --background: linear-gradient(90deg, rgba(244,196,51,1) 0%, rgba(239,184,16,1) 50%, rgba(198,151,9,1) 100%);
+    }
+}

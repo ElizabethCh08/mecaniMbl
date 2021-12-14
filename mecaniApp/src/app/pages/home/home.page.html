@@ -1,0 +1,56 @@
+<ion-content *ngIf="role === 'ciudadano'">
+  <div class="heading">
+    <h1>MecaniApp</h1>
+    <hr>
+  </div>
+  <div class="slides">
+    <ion-slides pager="true">
+      <ion-slide>
+        <img src="../../assets/images/pexels-cottonbro-4489704.jpg">
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/images/pexels-cottonbro-4489732.jpg">
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/images/pexels-malte-luk-2244746.jpg">
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="modules">
+        <img src="../../assets/images/profile-picture.png" routerLink="/profile">
+        <p class="text">Perfil</p>
+      </ion-col>
+      <ion-col class="modules">
+        <img src="../../assets/images/map.png" routerLink="/map">
+        <p class="text">Mapa</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="modules">
+        <img src="../../assets/images/talleres.png" routerLink="/workshops">
+        <p class="text">Talleres</p>
+      </ion-col>
+      <ion-col>
+        <img src="../../assets/images/suggestion.png" routerLink="/suggestions">
+        <p class="text">Notificaciones y quejas</p>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+  <div class="login-button">
+    <ion-button style="font-size: 12px;" type="submit" class="login" (click)="logOut()">Cerrar sesión
+      <ion-icon slot="end" name="log-out"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>
+<div class="heading" *ngIf="role != 'ciudadano'">
+  <h1>Su usuario no corresponde a "Ciudadano", verifique con el administrador su estado, GRACIAS!</h1>
+  <hr>
+  <div class="login-button">
+    <ion-button style="font-size: 12px;" type="submit" class="login" (click)="logOut()">Cerrar sesión
+      <ion-icon slot="end" name="log-out"></ion-icon>
+    </ion-button>
+  </div>
+</div>

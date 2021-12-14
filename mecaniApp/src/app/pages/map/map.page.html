@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mapa de talleres</ion-title>
+    <ion-icon name="arrow-back-outline" routerLink="/home"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <agm-map [latitude]='lat' [longitude]='long' [zoom]="zoom" >
+    <agm-marker
+      *ngFor="let meca of dataSource; let i = index"
+      [label]="{color: 'black', text: mecanicaName[i],fontWeight: 'bold',fontSize: '16px'}"
+      [latitude]="meca.lat"
+      [longitude]="meca.lng"
+      [markerDraggable]="false"
+    ></agm-marker>
+    <agm-marker
+      [label]="{color: 'blue', text: 'Mi ubicación',fontWeight: 'bold'}"
+      [latitude]="lat"
+      [longitude]="long"
+      [markerDraggable]="false">
+      ></agm-marker>
+  </agm-map>
+</ion-content>

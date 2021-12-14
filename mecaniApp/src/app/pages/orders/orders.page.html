@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="arrow-back-outline" routerLink="/suggestions"></ion-icon>
+    <ion-title>Tus ordenes de trabajo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let o of orden; let i = index">
+    <ion-card-header>
+      <ion-card-subtitle>{{user.name}} tu orden en el taller:</ion-card-subtitle>
+      <ion-card-title>{{namesMecanicas[i]}} </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Se encuentra en estado:<u>{{o.state| uppercase}}</u> <br><br>
+      Fecha de solicitud: {{o.created_at| date:'yyyy-MM-dd' }}<br>
+      Hora: {{o.created_at| date:'HH:mm' }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

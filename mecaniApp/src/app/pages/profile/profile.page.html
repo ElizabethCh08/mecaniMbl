@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="arrow-back-outline"  class="backIcon" routerLink="/home"></ion-icon>
+    <ion-title>{{userName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<br/>
+<ion-content>
+  <div class="email-login">
+  <div class="img">
+    <img src="../../assets/images/profile-picture.png" class="imgProfile">
+  </div>
+  <div class="container"  (ngSubmit)="onSubmit()">
+    <div class="formfield" [formGroup]="profileForm" >
+      <input
+        type="text"
+        class="form-control"
+        id="inputName"
+        placeholder="Nombre"
+        name="name"
+        pattern="[a-zA-Z ]*"
+        formControlName="name"
+      />
+      <label for="inputName">Nombre</label>
+      <p style="color:red;" *ngIf="!profileForm.hasError('required','name') &&profileForm.controls['name'].invalid && profileForm.hasError('pattern','name')">
+        Ingrese un nombre válido
+      </p>
+      <p style="color:red; "*ngIf="profileForm.hasError('required','name')">
+        Nombre <strong>Obligatorio</strong>
+      </p>
+    </div>
+    <div class="formfield" [formGroup]="profileForm">
+      <input
+        type="text"
+        class="form-control"
+        id="inputLastName"
+        placeholder="Apellido"
+        name="last_name"
+        pattern="[a-zA-Z ]*"
+        formControlName="last_name"
+      />
+      <label>Apellido</label>
+    </div>
+    <div class="formfield" [formGroup]="profileForm">
+      <input
+        type="text"
+        class="form-control"
+        id="inputEmail"
+        placeholder="email@example.com"
+        name="email"
+        formControlName="email"
+      />
+      <label>Correo</label>
+      <p style="color:red;" *ngIf="profileForm.controls['email'].touched &&profileForm.controls['email'].invalid && !profileForm.hasError('required','email')">
+        Ingrese un correo válido
+      </p>
+      <p style="color:red;" *ngIf="profileForm.hasError('required','email')">
+        Correo es <strong>Obligatorio</strong>
+      </p>
+    </div>
+    <div class="formfield" [formGroup]="profileForm">
+      <input style="width: 80vw"
+        [type]="passwordType"
+        clearOnEdit="false"
+        type="password"
+        class="form-control"
+        id="inputPassword"
+        placeholder="Nueva contraseña"
+        name="password"
+        formControlName="password"
+      />
+      <label>Nueva Contraseña</label>
+      <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+    </div>
+  </div>
+  <div class="update">
+    <ion-button type="submit"  color="dark" class="btn btn-primary mt-2" (click)="onSubmit()">Actualizar</ion-button>
+  </div>
+  </div>
+</ion-content>
+

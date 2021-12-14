@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="arrow-back-outline" routerLink="/suggestions"></ion-icon>
+    <ion-title>Crea tu queja</ion-title>
+  </ion-toolbar>
+  <hr />
+  <p style="text-align: center;">Por favor ingresa toda la información sobre tu queja</p>
+</ion-header>
+<hr />
+<ion-content>
+  <form [formGroup]="complainForm" (ngSubmit)="onSubmit(user.id)">
+    <div class="email-login">
+      <div class="formfield">
+        <ion-item>
+          <ion-label>Seleccione el taller del cual va a quejarse</ion-label>
+          <ion-select class="custom-options" formControlName="mech_id">
+            <ion-select-option value="{{m.id}}" *ngFor="let m of mecanica">{{m.name}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+      <div class="formfield">
+        <input type="text" class="form-control" id="floatingInputLastName" formControlName="title"
+          placeholder="Ingrese texto corto" />
+        <label for="floatingInputLastName">Título</label>
+        <p style="color:red;" *ngIf="complainForm.hasError('required','title')">
+          Título <strong>Obligatorio</strong>
+        </p>
+      </div>
+      <div class="formfield">
+        <input type="text" class="form-control" id="floatingInputEmail" formControlName="description"
+          placeholder="Ingrese aquí su queja" />
+        <label for="floatingInputEmail">Detalle su inconformidad</label>
+        <p style="color:red;" *ngIf="complainForm.hasError('required','description')">
+          Campo<strong>Obligatorio</strong>
+        </p>
+      </div>
+    </div>
+    <div class="login-button">
+      <ion-button type="submit" [disabled]="complainForm.invalid" class="login">Enviar queja</ion-button>
+    </div>
+    <!--  <p>Form Status: {{ signupForm.status }}</p>
+    <p>Email {{ signupForm.controls['email'].status}}</p>
+    <p>Nombre {{ signupForm.controls['name'].status}}</p>
+    <p>A {{ signupForm.controls['last_name'].status}}</p>
+    <p>P {{ signupForm.controls['password'].status}}</p>
+    <p>Pc {{ signupForm.controls['password_confirmation'].status}}</p> -->
+  </form>
+
+</ion-content>

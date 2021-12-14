@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="arrow-back-outline"  class="backIcon" routerLink="/workshops"></ion-icon>
+    <ion-title>{{mechNane}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <img src="{{image}}">
+
+  <ion-row>
+    <ion-col>
+      <p>SERVICIOS DE:</p>
+
+      <ion-chip *ngFor="let s of servicios">
+        <ion-label>{{s}}</ion-label>
+      </ion-chip>
+    </ion-col>
+    <ion-col>
+      <p>PROMOCIONES DISPONIBLES:</p>
+
+      <ion-chip *ngFor="let p of dataSource">
+        <ion-label>{{p.title}}</ion-label>
+      </ion-chip>
+    </ion-col>
+  </ion-row>
+  <br><br><br>
+  <div class="center">
+    <div class="grpBtn">
+      <ion-button class="verMas" routerLink="/workshops"> Cancelar </ion-button>
+      <ion-button class="verMas" (click)="createOrder()"> Aceptar </ion-button>
+    </div>
+  </div>
+
+</ion-content>

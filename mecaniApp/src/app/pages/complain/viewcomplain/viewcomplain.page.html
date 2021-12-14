@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="arrow-back-outline" routerLink="/suggestions"></ion-icon>
+    <ion-title>Lista de Quejas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let o of complain; let i = index">
+    <ion-card-header>
+      <ion-card-subtitle>{{user.name}} tu queja en el taller:</ion-card-subtitle>
+      <ion-card-title>{{namesMecanicas[i]}} </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Se encuentra en estado:<u>{{o.state| uppercase}}</u> <br><br>
+      Debes estar muy atento mientras nos comunicamos contigo<br>
+      Queja: {{o.title| uppercase}} {{o.description}}<br>
+      Respuesta: {{o.answer}}<br>
+      Fecha de solicitud: {{o.created_at| date:'yyyy-MM-dd' }}<br>
+      Hora: {{o.created_at| date:'HH:mm' }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

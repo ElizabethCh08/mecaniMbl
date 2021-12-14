@@ -1,0 +1,28 @@
+<ion-content>
+  <div class="heading">
+    <h1>MecaniApp</h1>
+    <br>
+    <hr />
+    <p>En nuestro mapa podrás encontrar el taller más cercano a tu ubicación</p>
+  </div>
+  <br>
+  <div text-center>
+    <p align="center">
+      <agm-map [latitude]='lat' [longitude]='long' [zoom]="zoom">
+        <agm-marker *ngFor="let meca of dataSource; let i = index"
+          [label]="{color: 'blue', text: mecanicaName[i],fontWeight: 'bold',fontSize: '14px'}" [latitude]="meca.lat"
+          [longitude]="meca.lng" [markerDraggable]="false" [iconUrl]="icon"></agm-marker>
+        <agm-marker [label]="{color: 'blue', text: 'Mi ubicación',fontWeight: 'bold'}" [latitude]="lat"
+          [longitude]="long" [markerDraggable]="false">
+          ></agm-marker>
+      </agm-map>
+    </p>
+  </div>
+  <br>
+  <p align="center">
+    <ion-button routerLink="/login">
+      <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+      Siguiente
+    </ion-button>
+  </p>
+</ion-content>

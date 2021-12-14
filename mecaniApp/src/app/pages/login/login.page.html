@@ -1,0 +1,38 @@
+<ion-content>
+  <div class="heading">
+    <h1>Bienvenido</h1>
+    <p>MecaniApp</p>
+    <hr />
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="email-login">
+      <p>Inicia sesión o regístrate para continuar</p>
+      <div class="formfield">
+        <input type="email" class="form-control" id="floatingInput" formControlName="email"
+          placeholder="email@example.com">
+        <label for="floatingInput" aria-placeholder="Correo">Correo</label>
+        <p style="padding-left: 30px; color:red;"
+          *ngIf="loginForm.controls['email'].touched &&loginForm.controls['email'].invalid && !loginForm.hasError('required','email')">
+          Ingrese un correo válido
+        </p>
+        <p align="start" style="padding-left: 30px; color:goldenrod;" *ngIf="loginForm.hasError('required','email')">
+          Correo es <strong>Obligatorio</strong>
+        </p>
+      </div>
+      <div class="formfield">
+        <input style="width: 80vw" type="password" [type]="passwordType" clearOnEdit="false" class="form-control" id="floatingPassword"
+          formControlName="password" placeholder="Contraseña">
+        <label for="floatingPassword" aria-placeholder="Contrasena">Contraseña</label>
+        <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+        <p align="start" style="padding-left: 30px; color:goldenrod;" *ngIf="loginForm.hasError('required', 'password')">
+          Ingrese su contraseña
+        </p>
+      </div>
+    </div>
+    <div class="login-button">
+      <ion-button class="login" type="submit">Iniciar sesión</ion-button>
+      <p>¿No tienes una cuenta? <span routerLink="/signup">Registrate</span></p>
+    </div>
+  </form>
+
+</ion-content>

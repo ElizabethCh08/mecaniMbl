@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="arrow-back-outline" routerLink="/home"></ion-icon>
+    <ion-title>Talleres mecánicos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-list>
+    <ion-item>
+      <ion-select placeholder="Talleres" >
+        <ion-select-option value="{{mec}}" *ngFor="let mec of dataSource">{{mec.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-card style="margin-top: 30px;" *ngFor="let mecanica of dataSource" >
+    <ion-card-header>
+      <ion-card-title>{{mecanica.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content >
+      <img src="{{mecanica.image}}" alt="">
+      <ion-card-subtitle>{{mecanica.address}}</ion-card-subtitle>
+      <ion-card-subtitle>Apertura: {{mecanica.open_hour}}h - Cierre: {{mecanica.close_hour}}h</ion-card-subtitle>
+    </ion-card-content>
+    <ion-button (click)="view(mecanica)" color="dark" >Contratar</ion-button>
+  </ion-card>
+</ion-content>

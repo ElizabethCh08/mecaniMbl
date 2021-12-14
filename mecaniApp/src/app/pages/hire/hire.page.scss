@@ -1,0 +1,37 @@
+.center{
+  text-align: center;
+  margin-top: 10px;
+}
+.grpBtn{
+    display: inline-block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    ion-button{
+        width: 90px;
+        --background: linear-gradient(90deg, rgba(244,196,51,1) 0%, rgba(239,184,16,1) 50%, rgba(198,151,9,1) 100%);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+.backIcon{
+  margin-top: 5px;
+  float: right;
+  color: rgba(244,196,51,1);
+  font-size: 30px;
+}
+p{
+    justify-content: center;
+    align-items: center;
+}
+.item-input ion-label{
+  pointer-events:all!important;
+}
+
+.item-cover{
+  display:none;
+}
+ion-title{
+  font-size: 25px;
+}

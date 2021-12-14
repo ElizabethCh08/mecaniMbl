@@ -1,0 +1,145 @@
+.heading{
+  margin-top: 15px;
+  text-align: center;
+  font-family: 'Karla', sans-serif;
+  h1{
+    font-size: 50px;
+    color: black !important;
+    font-family: 'Dancing Script', cursive;
+  }
+  p{
+    font-size: 18px;
+    color: rgb(87, 88, 79);
+  }
+}
+
+hr{
+  background: linear-gradient(90deg, rgba(244,196,51,1) 0%, rgba(239,184,16,1) 50%, rgba(198,151,9,1) 100%);
+  height: 2px;
+}
+
+
+
+ion-slides{
+  max-height: 160px;
+}
+
+ion-slide{
+  display: flex;
+  flex-direction: column;
+}
+
+.modules{
+  justify-content: center;
+  align-items: center;
+}
+
+.text{
+
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  background:  rgba(198,151,9,1) 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.login-button{
+  text-align: right;
+  margin-top: 10px;
+  .login{
+    text-transform: none;
+    font-size: 1rem;
+    --background: linear-gradient(90deg, rgba(244,196,51,1) 0%, rgba(239,184,16,1) 50%, rgba(198,151,9,1) 100%);
+  }
+  p{
+    color: red;
+    span{
+      color: rgba(61,32,104,1);
+    }
+  }
+}
+ion-title{
+  font-size: 25px;
+}
+
+.formfield{
+  position: relative;
+  margin: auto;
+  padding: 0px;
+  border: 0px;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.formfield > input,
+.formfield > label {
+  padding: 1em;
+  margin: 0.5em;
+  width: 85%;
+}
+
+.formfield > input{
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.formfield > label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  text-align: start;
+  padding-left: 40px;
+}
+
+input:focus + label,
+input:valid + label {
+  font-size: 1rem;
+  width: auto;
+  height: 1.3em;
+  padding: 0px 0.5em 0px 0.5em;
+  margin: 0px;
+  transition: 0.2s ease-in-out;
+  top: 0em;
+  left: 2em;
+}
+
+.other-links {
+  margin-left: 5px;
+  display: flex;
+  justify-content: space-between;
+  .remember-me{
+    display: flex;
+    align-items: center;
+    p{
+      margin-left: 10px !important;
+    }
+  }
+  .forgot{
+    margin-right: 7%;
+    color: #ddd;
+  }
+}
+
+.login-button{
+  text-align: center;
+  margin-top: 10px;
+  .login{
+    text-transform: none;
+    font-size: 1rem;
+    --background: linear-gradient(90deg, rgba(244,196,51,1) 0%, rgba(239,184,16,1) 50%, rgba(198,151,9,1) 100%);
+  }
+  p{
+    color: red;
+    span{
+      color: rgba(61,32,104,1);
+    }
+  }
+}
+ion-icon{
+  margin-top: 5px;
+  float: right;
+  color: rgba(244,196,51,1);
+  font-size: 20px;
+}

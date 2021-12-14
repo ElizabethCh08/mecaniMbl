@@ -1,0 +1,34 @@
+ion-title{
+  font-size: 25px;
+
+}
+ion-button{
+    float: right;
+    --background: linear-gradient(90deg, rgba(244,196,51,1) 0%, rgba(239,184,16,1) 50%, rgba(198,151,9,1) 100%);
+    font-size: 10px;
+    ion-icon{
+        color: #fff;
+    }
+}
+
+ion-icon{
+    margin-top: 5px;
+    float: right;
+    color: rgba(244,196,51,1);
+    font-size: 20px;
+}
+
+.seeMore{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.verMas{
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(244,196,51,1) 0%, rgba(239,184,16,1) 50%, rgba(198,151,9,1) 100%);
+    color: #fff;
+    border-radius: 10px;
+    font-size: 16px;
+}
